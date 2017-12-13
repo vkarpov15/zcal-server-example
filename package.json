@@ -1,0 +1,22 @@
+{
+  "name": "zcal-server-example",
+  "version": "1.0.0",
+  "author": "Valeri Karpov <val@karpov.io>",
+  "dependencies": {
+    "@turf/helpers": "5.1.5",
+    "express": "4.16.2"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">= 4.0.0"
+  },
+  "license": "Apache 2.0",
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vkarpov15/zcal-server-example.git"
+  },
+  "scripts": {
+    "start": "node ."
+  }
+}
