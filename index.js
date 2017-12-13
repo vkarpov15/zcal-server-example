@@ -40,5 +40,5 @@ app.get('/user/:id', (req, res) => {
   return res.json(userData[req.params.id]);
 });
 
-app.listen(3000);
+app.listen(9000);
 console.log('Server started');
