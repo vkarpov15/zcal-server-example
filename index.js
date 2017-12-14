@@ -2,12 +2,13 @@ const express = require('express');
 const { point } = require('@turf/helpers');
 
 const app = express();
+app.use(require('cors')());
 
 const userData = [
   {
     // First user contains properly formatted data
     name: 'Val K.',
-    appointments: [
+    events: [
       {
         date: new Date('2017-06-01'),
         name: 'Reunion',
@@ -25,9 +26,9 @@ const userData = [
   {
     // Second user has some malformed data
     name: 'Other User',
-    appointments: [
+    events: [
       {
-        date: new Date('2017 13 01'), // Invalid date
+        date: '2017 13 01', // Invalid date
         name: 'Meeting',
         // `location` is a geoJSON point, not a feature
         location: point([-74.7049476, 40.3483734]).geometry
@@ -37,7 +38,11 @@ const userData = [
 ]
 
 app.get('/user/:id', (req, res) => {
-  return res.json(userData[req.params.id]);
+  const data = userData[req.params.id];
+  if (data == null) {
+    return res.status(400).json({ message: 'Invalid user id' });
+  }
+  return res.json(data);
 });
 
 app.listen(9000);

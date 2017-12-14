@@ -4,6 +4,7 @@
   "author": "Valeri Karpov <val@karpov.io>",
   "dependencies": {
     "@turf/helpers": "5.1.5",
+    "cors": "2.8.4",
     "express": "4.16.2"
   },
   "devDependencies": {},
